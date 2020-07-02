@@ -57,8 +57,8 @@ public class _2两数相加 {
         ListNode cur = dummyhead;  //负责移动存储当前值的
         int carry = 0;
         while (p != null || q != null) {
-            int x = (p != null) ? p.val : 0;  // 2  4
-            int y = (q != null) ? q.val : 0;  // 5  6
+            int x = (p != null) ? (int) p.val : 0;  // 2  4
+            int y = (q != null) ? (int) q.val : 0;  // 5  6
             int sum = carry + x + y; // 7   10   8
             carry = sum / 10;  //  0   1     0
             cur.next = new ListNode(sum % 10);// 7  0  8

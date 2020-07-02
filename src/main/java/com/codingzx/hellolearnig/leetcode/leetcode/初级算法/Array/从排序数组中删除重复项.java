@@ -17,10 +17,10 @@ import java.util.Set;
  * 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
  * 输入：nums = [1,1,2],   输出：2
  * nums = [0,0,1,1,1,2,2,3,3,4], 输出 5  数组 0 1  2 3 4 2 2 3 3 4
- *
+ * <p>
  * 思路
- *    1.每次比较前后两个元素
- *    2.把不同的元素赋值给 a[pos++],最好返回pos
+ * 1.每次比较前后两个元素
+ * 2.把不同的元素赋值给 a[pos++],最好返回pos
  */
 public class 从排序数组中删除重复项 {
     public static void main(String[] args) {
@@ -36,6 +36,21 @@ public class 从排序数组中删除重复项 {
         System.out.println("第二种方法：" + removeDuplicates2(nums2));
         System.out.println("第三种方法：" + removeDuplicates3(nums3));
 
+    }
+
+    public static int removeDuplicates4(int[] array) {
+        if (array == null || array.length == 0) return 0;
+        int pre = 0, cur = 1;
+        int count = 0;
+        while (cur < array.length) {
+            if (array[pre] != array[cur]) {
+                array[count++] = array[pre];
+            }
+            pre++;
+            cur++;
+        }
+
+        return array.length;
     }
 
     public static int removeDuplicates1(int[] array) {
@@ -66,7 +81,7 @@ public class 从排序数组中删除重复项 {
         if (array == null || array.length == 0) return 0;
         int i = 0, j = 1;
         int pos = 1;  //记录不重复数字的个数
-        for (; i < array.length-1; i++,j++) {
+        for (; i < array.length - 1; i++, j++) {
             if (array[i] != array[j]) {
                 array[pos] = array[j];
                 pos++;
@@ -74,23 +89,22 @@ public class 从排序数组中删除重复项 {
         }
         return pos;
     }
+
     public static int removeDuplicates3(int[] array) {
         //数组统一用字母表示
         //判断空和长度为0的情况
         if (array == null || array.length == 0) return 0;
-        Set<Integer> arrayset=new HashSet<>();
-        int i=0;
-        for( i=0;i<array.length;i++)
-        {
+        Set<Integer> arrayset = new HashSet<>();
+        int i = 0;
+        for (i = 0; i < array.length; i++) {
             arrayset.add(array[i]);
         }
-        int j=0;
-        for(Integer set:arrayset){
-            array[j++]=set;
+        int j = 0;
+        for (Integer set : arrayset) {
+            array[j++] = set;
         }
         return arrayset.size();
     }
-
 
 
 }

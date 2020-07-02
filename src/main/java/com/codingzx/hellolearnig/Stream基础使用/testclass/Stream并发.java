@@ -1,5 +1,6 @@
 package com.codingzx.hellolearnig.Stream基础使用.testclass;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

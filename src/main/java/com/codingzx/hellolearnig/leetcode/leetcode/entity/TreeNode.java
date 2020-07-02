@@ -6,13 +6,14 @@ package com.codingzx.hellolearnig.leetcode.leetcode.entity;
  * @Description
  * @Date 2020-05-16 10:22
  */
-public class ListNode<T> {
+public class TreeNode<T> {
     // 值
+    public TreeNode<T> left;
+    public TreeNode<T> right;
     public T val;
-    // 模拟指针
-    public ListNode next;
 
-    public ListNode(T x) {
-        val = x;
+    public TreeNode(T t) {
+        this.val = t;
     }
+
 }

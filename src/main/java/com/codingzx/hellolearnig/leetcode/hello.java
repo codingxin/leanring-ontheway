@@ -17,21 +17,28 @@ public class hello {
 //    }
 
 
+    private static final String MESSAGE = "taobao";
 
-    private static final String MESSAGE="taobao";
-    public static void main(String [] args) {
-        Object obj=new Object();
-        String a ="tao"+"bao";
-        String b="tao";
-        String c="bao";
-        System.out.println(a==MESSAGE);
-        System.out.println((b+c)==MESSAGE);
+    public static void main(String[] args) {
+//        Object obj=new Object();
+//        String a ="tao"+"bao";
+//        String b="tao";
+//        String c="bao";
+//        System.out.println(a==MESSAGE);
+//        System.out.println((b+c)==MESSAGE);
+//        String a = "hello";
+//        String b = "abc";
+//        String c = a + b;
+//        String d = new String("helloabc");
+//        System.out.println((a + b).equals(c));
+//        System.out.println(a + b == c);
+//        System.out.println(c == d);
+//        System.out.println(c.equals(d));
+        System.out.println(Integer.valueOf("8"));
+        System.out.println('8'-'0');
+        System.out.println(Integer.valueOf('8'-'0'));
+
     }
-
-
-
-
-
 
 
 }

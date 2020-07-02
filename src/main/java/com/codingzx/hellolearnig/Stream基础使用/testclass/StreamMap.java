@@ -73,7 +73,8 @@ public class StreamMap {
 
 
         /**
-         * 对管道中的管道进行操作，如对将“hello”，“world”两个字符串组成的集合，元素的每一个字母打印出来。  采用flatMap
+         * 对管道中的管道进行操作，如对将“hello”，“world”两个字符串组成的集合，元素的每一个字母打印出来。
+         * 采用flatMap
          */
         List<String> words = Arrays.asList("hello", "word");
         words.stream()
