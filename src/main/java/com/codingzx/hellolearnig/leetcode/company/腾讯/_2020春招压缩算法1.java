@@ -24,7 +24,7 @@ import java.util.Stack;
  * HG[3|B[2|CA]]F
  * <p>
  * 输出例子1:
- * HGBCACABCACA BCACAF
+ * HG B CACA B CACA B CACA F
  * <p>
  * HG[3|B[2|CA]]F−>HG[3|BCACA]F−>HGBCACABCACABCACAF
  * @Date 2020-07-02 10:38
@@ -57,18 +57,15 @@ public class _2020春招压缩算法1 {
                 num=0;//清空
             } else if (c == ']') {
                 num = intstatck.pop();
-                StringBuffer tmp = new StringBuffer(strStack.pop());
+                StringBuffer tmp = new StringBuffer(strStack.pop()); // 保存里层的子字符串
                 while (num > 0) {
                     //sbtmp.append(tmp);
-                    tmp.append(sbtmp.toString());
+                    tmp.append(sbtmp.toString());  // 外层的B 循环添加 里层的CA
                     num--;
                 }
                 sbtmp = new StringBuffer(tmp.toString());
             }
-
-
         }
-
         System.out.println(sbtmp.toString());
 
 

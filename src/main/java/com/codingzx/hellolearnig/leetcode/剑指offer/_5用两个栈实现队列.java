@@ -4,11 +4,11 @@ import java.util.Stack;
 
 /**
  * @author created by zhangxin27695
- * @Classname _4用两个栈实现队列
+ * @Classname _5用两个栈实现队列
  * @Description
  * @Date 2020-05-29 11:14
  */
-public class _4用两个栈实现队列 {
+public class _5用两个栈实现队列 {
     Stack<Integer> stack1 = new Stack<Integer>();
     Stack<Integer> stack2 = new Stack<Integer>();
 
