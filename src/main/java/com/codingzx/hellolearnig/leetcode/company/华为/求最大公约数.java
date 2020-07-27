@@ -6,6 +6,11 @@ import java.util.Scanner;
  * @author created by zhangxin27695
  * @Classname 求最大公约数
  * @Description   求最小公倍数 = 两数乘积 / 两数最大公约数
+ * int a b
+ *  tmp = a%b;
+ *  a=b;
+ *  b=tmp;
+ *
  * @Date 2020-07-16 17:14
  */
 public class 求最大公约数 {

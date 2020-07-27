@@ -62,7 +62,7 @@ public class hello{
                 Arrays.sort(a);
             } else {
                 //降序，可用Comparator()匿名内部类
-                Arrays.sort(a, (Comparator<Integer>) Comparator.reverseOrder());
+//                Arrays.sort(a, (Comparator<Integer>) Comparator.reverseOrder());
 
 
 

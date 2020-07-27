@@ -33,15 +33,24 @@ public class 聪明的编辑3 {
             int n = Integer.parseInt(sc.nextLine());
             for (int i = 0; i < n; i++) {
                 StringBuilder sb = new StringBuilder(sc.nextLine());
-
-
-
-
-
-
+                for (int j = 2; j < sb.length(); j++) {
+                    if (sb.charAt(j) == sb.charAt(j - 1) && sb.charAt(j - 1) == sb.charAt(j - 2)) {
+                        sb.deleteCharAt(j);
+                        j--;
+                    } else if (isPattern(j, sb)) {
+                        sb.deleteCharAt(j-1);
+                        j--;
+                    }
+                }
                 System.out.println(sb);
             }
         }
         sc.close();
+    }
+
+    //判断【n-3~n】是否满足 aabb,j代表最后一个B，至少应该等于3
+    public static boolean isPattern(int n, StringBuilder sb) {
+        if (n < 3) return false;
+        return sb.charAt(n - 3) == sb.charAt(n - 2) && sb.charAt(n - 1) == sb.charAt(n);
     }
 }

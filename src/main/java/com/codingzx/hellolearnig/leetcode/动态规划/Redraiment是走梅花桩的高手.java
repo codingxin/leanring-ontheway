@@ -1,6 +1,5 @@
-package com.codingzx.hellolearnig.leetcode.company.华为;
+package com.codingzx.hellolearnig.leetcode.动态规划;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -61,14 +60,13 @@ public class Redraiment是走梅花桩的高手 {
     // * 从第2格开始走,最多只有1步,5
     // * 而从第3格开始走最多有3步,1 4 5
     // * 从第5格开始走最多有2步,4 5
-    // dp[1 1 1 1 1]
     public static int getMaxSteps(int[] arr, int n) {
         int[] dp = new int[n];
         for (int i = 0; i < n; i++) {
-            dp[i] = 1;        // 状态方程 dp数组每个初始为1  存储的步数
+            dp[i] = 1;        // dp数组每个初始为1  存储的步数
             for (int j = 0; j < i; j++) {  // 判断
                 if (arr[j] < arr[i]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1); //状态转移方程
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
@@ -81,11 +79,6 @@ public class Redraiment是走梅花桩的高手 {
             if (dp[i] > max) {
                 max = dp[i];
             }
-//        for (int i : dp) {
-//            max = dp[i] > 0 ? dp[i] : 0;
-//        }
-//        Arrays.stream(dp).forEach(e -> {
-//        });
         return max;
     }
 
