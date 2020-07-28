@@ -1,7 +1,7 @@
-package com.codingzx.hellolearnig.leetcode.剑指offer;
+package com.codingzx.leetcode.剑指offer;
 
 
-import com.codingzx.hellolearnig.leetcode.leetcode.entity.TreeNode;
+import com.codingzx.leetcode.leetcode.entity.TreeNode;
 
 import java.util.Arrays;
 

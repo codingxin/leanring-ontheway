@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.牛客网;
+package com.codingzx.牛客网;
 
 import java.util.Scanner;
 

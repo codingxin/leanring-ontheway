@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.company.字节跳动.兑换货币;
+package com.codingzx.leetcode.company.字节跳动.兑换货币;
 
 import java.util.Arrays;
 import java.util.Scanner;

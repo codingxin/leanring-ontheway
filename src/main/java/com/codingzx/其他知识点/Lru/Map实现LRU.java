@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.其他知识点.Lru;
+package com.codingzx.其他知识点.Lru;
 
 import java.util.HashMap;
 import java.util.Iterator;

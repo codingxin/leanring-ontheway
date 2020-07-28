@@ -1,4 +1,4 @@
-package com.codingzx.自定义注解;
+package com.codingzx.其他知识点.自定义注解;
 
 /**
  * @author codingzx
@@ -11,12 +11,12 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import com.codingzx.自定义注解.MyAnnotation.MyClassAndMethodAnnotation;
-import com.codingzx.自定义注解.MyAnnotation.MyClassAndMethodAnnotation.EnumType;
-import com.codingzx.自定义注解.MyAnnotation.MyClassAnnotation;
-import com.codingzx.自定义注解.MyAnnotation.MyConstructorAnnotation;
-import com.codingzx.自定义注解.MyAnnotation.MyFieldAnnotation;
-import com.codingzx.自定义注解.MyAnnotation.MyMethodAnnotation;
+import com.codingzx.其他知识点.自定义注解.MyAnnotation.MyClassAndMethodAnnotation;
+import com.codingzx.其他知识点.自定义注解.MyAnnotation.MyClassAndMethodAnnotation.EnumType;
+import com.codingzx.其他知识点.自定义注解.MyAnnotation.MyClassAnnotation;
+import com.codingzx.其他知识点.自定义注解.MyAnnotation.MyConstructorAnnotation;
+import com.codingzx.其他知识点.自定义注解.MyAnnotation.MyFieldAnnotation;
+import com.codingzx.其他知识点.自定义注解.MyAnnotation.MyMethodAnnotation;
 
 @MyClassAnnotation(desc = "这是类注解", uri = "com.sgl.annotation")
 @MyClassAndMethodAnnotation(classType = EnumType.util)

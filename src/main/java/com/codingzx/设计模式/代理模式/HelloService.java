@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.设计模式.代理模式;
+package com.codingzx.设计模式.代理模式;
 
 /**
  * @author created by zhangxin27695

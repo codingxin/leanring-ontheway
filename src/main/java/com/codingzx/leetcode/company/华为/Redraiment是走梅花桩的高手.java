@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.company.华为;
+package com.codingzx.leetcode.company.华为;
 
 import java.util.Arrays;
 import java.util.Scanner;

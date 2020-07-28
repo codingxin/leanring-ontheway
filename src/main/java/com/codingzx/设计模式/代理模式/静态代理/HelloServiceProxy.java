@@ -1,6 +1,6 @@
-package com.codingzx.hellolearnig.设计模式.代理模式.静态代理;
+package com.codingzx.设计模式.代理模式.静态代理;
 
-import com.codingzx.hellolearnig.设计模式.代理模式.HelloService;
+import com.codingzx.设计模式.代理模式.HelloService;
 
 /**
  * @author created by zhangxin27695

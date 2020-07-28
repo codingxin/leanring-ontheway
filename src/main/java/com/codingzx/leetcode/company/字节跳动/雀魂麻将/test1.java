@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.company.字节跳动.雀魂麻将;
+package com.codingzx.leetcode.company.字节跳动.雀魂麻将;
 
 /**
  * @author created by zhangxin27695

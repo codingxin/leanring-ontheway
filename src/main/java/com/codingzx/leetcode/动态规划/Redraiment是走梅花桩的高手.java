@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.动态规划;
+package com.codingzx.leetcode.动态规划;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.company;
+package com.codingzx.leetcode.company;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

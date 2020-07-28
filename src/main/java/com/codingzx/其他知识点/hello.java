@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.其他知识点;
+package com.codingzx.其他知识点;
 
 /**
  * @author created by zhangxin27695

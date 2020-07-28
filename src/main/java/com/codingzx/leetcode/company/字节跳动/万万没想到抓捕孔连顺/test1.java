@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.company.字节跳动.万万没想到抓捕孔连顺;
+package com.codingzx.leetcode.company.字节跳动.万万没想到抓捕孔连顺;
 
 import java.util.Scanner;
 

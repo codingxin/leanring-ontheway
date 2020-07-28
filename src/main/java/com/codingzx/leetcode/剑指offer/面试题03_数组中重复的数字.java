@@ -1,4 +1,4 @@
-package com.codingzx.hellolearnig.leetcode.剑指offer;
+package com.codingzx.leetcode.剑指offer;
 
 import java.util.HashSet;
 import java.util.Set;

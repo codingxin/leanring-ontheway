@@ -1,6 +1,6 @@
-package com.codingzx.hellolearnig.设计模式.代理模式.动态代理;
+package com.codingzx.设计模式.代理模式.动态代理;
 
-import com.codingzx.hellolearnig.设计模式.代理模式.HelloService;
+import com.codingzx.设计模式.代理模式.HelloService;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
