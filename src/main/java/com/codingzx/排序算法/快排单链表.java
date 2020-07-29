@@ -11,8 +11,8 @@ import java.util.LinkedList;
 public class 快排单链表 {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList();
-        int[] arr = {4,2,5,3,7,9,0,1}; // test case 1
-//      int[] arr = {5,4,3,2,1,6,7,9,8,10}; // test case 2
+        int[] arr = {4,2,5,3,7,9,0,1}; // 主线程实现 case 1
+//      int[] arr = {5,4,3,2,1,6,7,9,8,10}; // 主线程实现 case 2
         for(int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
