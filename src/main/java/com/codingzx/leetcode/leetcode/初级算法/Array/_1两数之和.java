@@ -27,6 +27,9 @@ public class _1两数之和 {
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
         }
+//        for (Map.Entry e : map.entrySet()) {
+//            System.out.println(e.getKey() + "hello" + e.getValue());
+//        }
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement) && map.get(complement) != i) {
@@ -52,9 +55,9 @@ public class _1两数之和 {
         int[] nums = {1, 2, 7, 11, 15};
         int targer = 9;
         int[] a = new int[2];
-//        twoSum(nums, targer);
+        twoSum(nums, targer);
         int c = 8;
-        System.out.println((c != 3 && c != 4 && c != 5 && c!= 6));
+        System.out.println((c != 3 && c != 4 && c != 5 && c != 6));
 
 
     }

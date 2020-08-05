@@ -28,7 +28,7 @@ import com.codingzx.leetcode.leetcode.entity.ListNode;
  * 你的算法只能使用常数的额外空间。
  * 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
  * <p>
- * 来源：力扣（LeetCode）
+ * 来源：力扣（LeetCode）   递归解法
  * 链接：https://leetcode-cn.com/problems/reverse-nodes-in-k-group
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Date 2020-05-16 10:21

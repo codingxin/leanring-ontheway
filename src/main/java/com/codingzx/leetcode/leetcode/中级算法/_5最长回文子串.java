@@ -37,7 +37,13 @@ public class _5最长回文子串 {
         return s.substring(start, end + 1);
     }
 
-
+    /**
+     * 返回当前子串的长度
+     * @param s
+     * @param left
+     * @param right
+     * @return
+     */
     private static int expandAroundCenter(String s, int left, int right) {
         int L = left, R = right;
         while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {

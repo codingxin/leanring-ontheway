@@ -2,7 +2,7 @@ package com.codingzx.leetcode.leetcode.初级算法.Array;
 
 /**
  * @author created by zhangxin27695
- * @Classname 买卖股票的最佳时机
+ * @Classname 买卖股票的最佳时机贪心
  * @Description 输入: [7,1,5,3,6,4]
  * 输出: 7
  * 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
@@ -17,23 +17,25 @@ package com.codingzx.leetcode.leetcode.初级算法.Array;
  * 输入: [7,6,4,3,1]
  * 输出: 0
  * 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
- *
+ * <p>
  * 贪心算法，总是做出在当前看来是最好的选择，不从整体最优上加以考虑，也就是说，只关心当前最优解
  * @Date 2019-11-09 11:07
  */
-public class 买卖股票的最佳时机 {
+public class 买卖股票的最佳时机贪心 {
     public static int maxProfit(int[] prices) {
         int max = 0;
         for (int i = 0; i < prices.length - 1; i++) {
-            if (prices[i] < prices[i + 1])
+            if (prices[i] < prices[i + 1]) {
+                System.out.println("第[" + i + "]" + prices[i] + ",第[" + i + 1 + "]" + prices[i + 1]);
                 max += prices[i + 1] - prices[i];
+            }
         }
         return max;
     }
 
 
     public static void main(String[] args) {
-        int a[] = {7, 1, 5, 3, 6, 4};
+        int a[] = {7, 1, 5, 3,4, 6, 4};
         System.out.println(maxProfit(a));
     }
 }

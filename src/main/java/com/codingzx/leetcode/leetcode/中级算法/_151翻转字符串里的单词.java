@@ -42,7 +42,7 @@ public class _151翻转字符串里的单词 {
         short s1 = 1;
         s1 = (short) (s1 + 1);
         s1 += 1;
-        System.out.println("这个字符串" + reverseWords2(s));
+        System.out.println("这个字符串" + reverseWords3(s));
     }
 
     /**
@@ -115,7 +115,7 @@ public class _151翻转字符串里的单词 {
             while (str.contains(emptyStr)) {
                 str = str.replaceAll(emptyStr, "");
             }
-            if ("".equals(str)) {
+            if (" ".equals(str)) {
                 continue;
             }
             sb.append(str);

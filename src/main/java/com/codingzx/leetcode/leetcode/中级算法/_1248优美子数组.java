@@ -28,21 +28,24 @@ public class _1248优美子数组 {
         int count = 0;
         int i = 0;  //滑动窗口起始
         int j = 0;  //滑动窗口结束
-        int a=k;    //滑动窗口尺寸
+        int a = k;    //滑动窗口尺寸
         int cishu = 0; //需要循环判断的次数
-        for (j = i+a-1; j <= nums.length - 1;) {
+        for (j = i + a - 1; j <= nums.length - 1; ) {
             //每次传入一个滑动窗口 ，如果滑动窗口里面奇数正好是K ，次数+1
             if (number(nums, i, j) == k) {
                 count++;
             }
-            if (j == nums.length-1) {
-               i=0;
-               a+=1;
-               j=i+a-1;
-               continue;
+            if (j == nums.length - 1) {
+                i = 0;
+                a += 1;
+                j = i + a - 1;
+                continue;
             }
-            if(a==nums.length){break;}
-            i++;j++;
+            if (a == nums.length) {
+                break;
+            }
+            i++;
+            j++;
         }
         return count;
     }
@@ -63,11 +66,12 @@ public class _1248优美子数组 {
 //        numberOfSubarrays(a, 3);
         System.out.println("这个数组" + numberOfSubarrays(a3, 2));
     }
+
     public int numberOfSubarrays2(int[] nums, int k) {
         int len = nums.length, res = 0, feed = 0, arr[] = new int[len + 2];
-        for(int i = 0; i < len; i ++) {
+        for (int i = 0; i < len; i++) {
             // if it is odd
-            if((nums[i] & 1) == 1) {
+            if ((nums[i] & 1) == 1) {
                 arr[++feed] = i;
             }
         }
@@ -75,7 +79,7 @@ public class _1248优美子数组 {
         arr[0] = -1;
         // right border
         arr[feed + 1] = len;
-        for(int i = 1; i + k < feed + 2; i ++) {
+        for (int i = 1; i + k < feed + 2; i++) {
             res += (arr[i] - arr[i - 1]) * (arr[i + k] - arr[i + k - 1]);
         }
         return res;
@@ -89,28 +93,24 @@ public class _1248优美子数组 {
         假设从（j,n]的和为k ,那么当我们找到sum[n]的时候，就会存在sum[n]-k=sum[j],
         此时times就加上sum[j]的个数，因为这里j可能不是一个值
         */
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int sum = 0;
-        map.put(0,1);
+        map.put(0, 1);
         int temp = 0;
-        for(int i=0;i<nums.length;i++)
-        {
-            if(nums[i]%2!=0)
-            {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 != 0) {
                 sum += 1;
             }
-            if(sum>=k)
-            {
+            if (sum >= k) {
                 //和为j
-                int j = sum-k;
+                int j = sum - k;
                 //找和为j的个数
-                temp+=map.get(j);
+                temp += map.get(j);
             }
-            map.put(sum,map.getOrDefault(sum,0)+1);
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
         return temp;
     }
-
 
 
 }

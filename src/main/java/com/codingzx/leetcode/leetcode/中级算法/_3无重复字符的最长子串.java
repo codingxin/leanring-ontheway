@@ -52,27 +52,30 @@ public class _3无重复字符的最长子串 {
 
         return ans;
     }
+
     public static int lengthOfLongestSubstring2(String s) {
         // 每一次循环不重复的子串长度
-        int ans = 0,rk=0;
-        Set<Character> occ=new HashSet<>();
-        for(int i=0;i<s.length();i++){
-            if(i!=0){
-                occ.remove(s.charAt(i-1));
-            }
-            while(rk<s.length()&&!occ.contains(s.charAt(rk))){
+        int ans = 0, rk = 0;
+//        Set<Character> occ = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+//            if (i != 0) {
+//                occ.remove(s.charAt(i - 1));
+//            }
+            Set<Character> occ = new HashSet<>();
+            while (rk < s.length() && !occ.contains(s.charAt(rk))) {
                 occ.add(s.charAt(rk));
                 rk++;
             } // i 0  k 2
-             //  2   5
-            ans=Math.max(ans,rk-i);
+            //  2   5
+            ans = Math.max(ans, rk - i);
         }
 
         return ans;
 
     }
+
     public static void main(String[] args) {
-        String s = "pwwkew";
+        String s = "abcabcbb";
         System.out.println("_3无重复字符的最长子串长度为" + lengthOfLongestSubstring(s));
     }
 }

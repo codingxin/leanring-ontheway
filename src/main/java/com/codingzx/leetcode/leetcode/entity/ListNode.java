@@ -15,4 +15,8 @@ public class ListNode<T> {
     public ListNode(T x) {
         val = x;
     }
+
+    public ListNode() {
+
+    }
 }

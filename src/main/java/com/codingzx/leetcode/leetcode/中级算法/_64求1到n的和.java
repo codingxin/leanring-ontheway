@@ -40,11 +40,16 @@ public class _64求1到n的和 {
          *         return res;
          */
     }
+
     public static void main(String[] args) {
         Queue<String> queue = new LinkedList<>();
         queue.offer("a");
         queue.offer("b");
     }
 
+    public int sumNums2(int n) {
+        int sum = (1 + n) * n / 2;
+        return sum;
+    }
 
 }
