@@ -1,4 +1,4 @@
-package com.codingzx.Stream性能测试;
+package com.codingzx.JAVA8高级语法.Stream性能测试;
 
 /**
  * @author created by zhangxin27695
@@ -21,17 +21,17 @@ import java.util.stream.Collectors;
 
 public class StreamObjectTest {
 
-    public static List<com.codingzx.JAVA8高级语法.Stream性能测试.Order> orders;
+    public static List<Order> orders;
 
     @BeforeAll
     public static void init() {
-        orders = com.codingzx.JAVA8高级语法.Stream性能测试.Order.genOrders(10);
+        orders = Order.genOrders(10);
     }
 
     @JunitPerfConfig(duration = 10000, warmUp = 1000, reporter = {HtmlReporter.class})
     public void testSumOrderForLoop(){
         Map<String, Double> map = new HashMap<>();
-        for(com.codingzx.JAVA8高级语法.Stream性能测试.Order od : orders){
+        for(Order od : orders){
             String userName = od.getUserName();
             Double v;
             if((v=map.get(userName)) != null){
@@ -46,15 +46,15 @@ public class StreamObjectTest {
     @JunitPerfConfig(duration = 10000, warmUp = 1000, reporter = {HtmlReporter.class})
     public void testSumOrderStream(){
         orders.stream().collect(
-                Collectors.groupingBy(com.codingzx.JAVA8高级语法.Stream性能测试.Order::getUserName,
-                        Collectors.summingDouble(com.codingzx.JAVA8高级语法.Stream性能测试.Order::getPrice)));
+                Collectors.groupingBy(Order::getUserName,
+                        Collectors.summingDouble(Order::getPrice)));
     }
 
     @JunitPerfConfig(duration = 10000, warmUp = 1000, reporter = {HtmlReporter.class})
     public void testSumOrderParallelStream(){
         orders.parallelStream().collect(
-                Collectors.groupingBy(com.codingzx.JAVA8高级语法.Stream性能测试.Order::getUserName,
-                        Collectors.summingDouble(com.codingzx.JAVA8高级语法.Stream性能测试.Order::getPrice)));
+                Collectors.groupingBy(Order::getUserName,
+                        Collectors.summingDouble(Order::getPrice)));
     }
 }
 
@@ -78,8 +78,8 @@ class Order{
         return timestamp;
     }
 
-    public static List<com.codingzx.JAVA8高级语法.Stream性能测试.Order> genOrders(int listLength){
-        ArrayList<com.codingzx.JAVA8高级语法.Stream性能测试.Order> list = new ArrayList<>(listLength);
+    public static List<Order> genOrders(int listLength){
+        ArrayList<Order> list = new ArrayList<>(listLength);
         Random rand = new Random();
         int users = listLength/200;// 200 orders per user
         users = users==0 ? listLength : users;
@@ -90,7 +90,7 @@ class Order{
         for(int i=0; i<listLength; i++){
             double price = rand.nextInt(1000);
             String userName = userNames.get(rand.nextInt(users));
-            list.add(new com.codingzx.JAVA8高级语法.Stream性能测试.Order(userName, price, System.nanoTime()));
+            list.add(new Order(userName, price, System.nanoTime()));
         }
         return list;
     }

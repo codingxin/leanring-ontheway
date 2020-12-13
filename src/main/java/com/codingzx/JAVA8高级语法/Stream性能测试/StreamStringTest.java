@@ -1,10 +1,11 @@
-package com.codingzx.Stream性能测试;
+package com.codingzx.JAVA8高级语法.Stream性能测试;
 import com.github.houbb.junitperf.core.annotation.JunitPerfConfig;
 import com.github.houbb.junitperf.core.report.impl.HtmlReporter;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.Random;
+
 /**
  * @author created by zhangxin27695
  * @Classname StreamStringTest
@@ -29,7 +30,6 @@ public class StreamStringTest {
     public void testMinStringForLoop(){
         String minStr = null;
         boolean first = true;
-
         for(String str : list){
             if(first){
                 first = false;
