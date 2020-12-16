@@ -32,12 +32,22 @@ public class wkhtmltopdf {
                 permissionexec.waitFor();
                 command = wkhtmltopdfpath + " --debug-javascript --no-stop-slow-scripts --margin-left 0mm --margin-right 0mm --margin-top 0mm - -";
             } else {
-                command = PathConstants.WKHTMLTOPDF_EXE_PATH + " --debug-javascript --no-stop-slow-scripts " +
-//                        "–-disallow-local-file-access "+
-//                        "–-disable-external-links* "+
-//                        "–-disable-internal-links* "+
-//                        "–-disable-javascript "+
-//                        "--no-images "+
+                command = PathConstants.WKHTMLTOPDF_EXE_PATH + " " +
+//                        "–-disable-external-links* " +
+//                        "–-disable-internal-links* " +
+//                        " toc " +
+                        " --enable-local-file-access  \"D:\\baidu3_files\"" +
+//                        " --header-html file:\\D:\\hello.html" +
+                        " --header-left '绿洲体检报告' " +
+                        " --header-right '[date][time]导出PDF测试' " +
+                        " --header-line --header-spacing 3 --footer-spacing 3 --footer-center \"- 第 [page] 页-\"" +
+                        " cover \"D:\\hello.html\" " +
+                        " --debug-javascript --no-stop-slow-scripts " +
+//                        "–-disallow-local-file-access " +
+//                        "–-disable-javascript " +
+//                        "--no-images " +
+//                        "--header-html /baidu.html " +
+//                        "--htmldoc " +
                         "- -";
             }
             log.info("[WKHTMLTOPDF] command:{}", command);
