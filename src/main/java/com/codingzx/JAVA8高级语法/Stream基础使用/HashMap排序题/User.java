@@ -16,4 +16,8 @@ public class User {
     Integer userId;
     String loginTime;
 
+    public User(String username, Integer userId) {
+        this.username = username;
+        this.userId = userId;
+    }
 }

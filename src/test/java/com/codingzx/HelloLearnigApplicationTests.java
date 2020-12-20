@@ -1,11 +1,31 @@
 package com.codingzx;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 
-@SpringBootTest
+import javax.mail.MessagingException;
+import java.util.Date;
+
+@SpringBootTest()
 class HelloLearnigApplicationTests {
+	@Autowired
+	JavaMailSender javaMailSender;
 
+	@Test
+	public void sendSimpleMail() throws MessagingException {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setSubject("这是一封测试邮件");
+		message.setFrom("994683607@qq.com");
+		message.setTo("1452212105@qq.com");
+//        message.setCc("994683607@qq.com");  // 抄送人
+//        message.setBcc("14xxxxx098@qq.com"); // 隐秘抄送
+		message.setSentDate(new Date());
+		message.setText("测试简单发送邮件");
+		javaMailSender.send(message);
+	}
 	@Test
 	void contextLoads() {
 	}

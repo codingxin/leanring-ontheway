@@ -18,7 +18,7 @@ public class PathConstants {
     /**
      * wkhtmltopdf插件路径
      */
-    public static final String WKHTMLTOPDF_EXE_PATH = "D:\\softinstall\\wkhtmltopdf\\bin\\" + "wkhtmltopdf.exe";
+    public static final String WKHTMLTOPDF_EXE_PATH = "D:\\codingInstall\\wkhtmltopdf\\bin\\" + "wkhtmltopdf.exe";
 
 
 
