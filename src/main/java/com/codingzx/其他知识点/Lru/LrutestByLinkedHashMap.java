@@ -7,6 +7,8 @@ package com.codingzx.其他知识点.Lru;
  * @Date 2020-07-27 11:14
  */
 public class LrutestByLinkedHashMap {
+
+
     public static void main(String[] args) {
         // 阈值为3，再插入就会移除满的
         SimpleLRUCache<String, String> lru = new SimpleLRUCache<>(3);
@@ -21,6 +23,9 @@ public class LrutestByLinkedHashMap {
         System.out.println(lru);
         lru.put("球员6", "格林");
         System.out.println(lru);
+
+
+
     }
 
 }
