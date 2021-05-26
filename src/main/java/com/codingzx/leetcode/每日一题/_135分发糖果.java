@@ -58,8 +58,6 @@ public class _135分发糖果 {
         for (int i = 0; i < ratings.length; i++) {
             count += Math.max(left[i], right[i]);
         }
-
-
         return count;
     }
 
@@ -106,8 +104,8 @@ public class _135分发糖果 {
 
 
     public static void main(String[] args) {
-        int[] ratings = {1, 0, 2};
-        System.out.println(candy2(ratings));
+        int[] ratings = {5,6,8,7,6,6,4,5};
+        System.out.println(candy(ratings));
 
     }
 }

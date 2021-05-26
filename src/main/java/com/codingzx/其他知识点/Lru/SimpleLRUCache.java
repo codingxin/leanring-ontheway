@@ -30,7 +30,8 @@ public class SimpleLRUCache<K, V> {
             private static final long serialVersionUID = 1L;
 
             /**
-             *  removeEldestEntry: 可以通过重写这个方法来控制缓存元素的删除，当缓存满了后，就可以通过返回true删除最久未被使用的元素，达到LRU的要求
+             *  removeEldestEntry: 可以通过重写这个方法来控制缓存元素的删除，当缓存满了后，
+             *  就可以通过返回true删除最久未被使用的元素，达到LRU的要求
              *  重写removeEldestEntry()方法，告诉它什么时候需要删除容器中"最老"的元素
              */
             @Override

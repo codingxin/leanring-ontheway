@@ -48,6 +48,7 @@ public class _455分发饼干 {
         Arrays.sort(s);
         for (int i = 0, j = 0; i < g.length && j < s.length; i++, j++) {
             while (j < s.length && g[i] > s[j]) {
+                // 找到第一個大於child的餅乾
                 j++;
             }
             if (j < s.length) {
