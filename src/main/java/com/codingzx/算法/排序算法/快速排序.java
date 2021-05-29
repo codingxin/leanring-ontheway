@@ -11,14 +11,13 @@ public class 快速排序 {
         if (leftIndex >= rightIndex) {
             return;
         }
-
         int left = leftIndex;
         int right = rightIndex;
         // 待排序的第一个元素作为基准值
         int key = array[left];
         while (left < right) {
             // 从最右边找到第一个大于key的下标
-            while (right > left && array[right] >= key) {
+            while (left < right && array[right] >= key) {
                 right--;
             }
             //找到这种元素将arr[left]放入arr[right]中
@@ -34,6 +33,7 @@ public class 快速排序 {
         if (leftIndex > rightIndex) {
             return;
         }
+        // 左边第一个元素
         int base = array[leftIndex];
         int left = leftIndex;
         int right = rightIndex;
@@ -44,6 +44,8 @@ public class 快速排序 {
             while (array[left] <= base && left < right) {
                 left++;
             }
+            // 上面的循环结束表示找到了位置或者(i>=j)了，交换两个数在数组中的位置
+            // 交换 left和right
             if (left < right) {
                 int tmp = array[left];
                 array[left] = array[right];

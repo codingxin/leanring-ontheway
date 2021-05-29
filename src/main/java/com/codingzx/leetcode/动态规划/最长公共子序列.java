@@ -5,16 +5,16 @@ import java.util.Arrays;
 /**
  * @author created by zhangxin27695
  * @Classname 最长公共子序列
- * @Description 输入 10，9，2，5，3，7，101，18
+ * @Description 输入 10,9,2,5,3,7,101,18
  * 输出 4
- * 最长的子序列为 2，3，7，101 长度为4
+ * 最长的子序列为 2,3,7,101 长度为4
  * 1. 算法可能时间复杂度为O（N^2）  - 动态规划法
  * dp代表以当前为结尾的最长子序列长度
- *       10 9 2 5 3 7 101 18
+ * 10 9 2 5 3 7 101 18
  * dp[i] 1  1 1 1 2 3  4   4
  * <p>
  * <p>
- *        2, 5, 1, 5, 4, 5
+ * 2, 5, 1, 5, 4, 5
  * dp[i]  1  2  1  2  2  3
  * <p>
  * <p>
@@ -25,11 +25,14 @@ public class 最长公共子序列 {
 
     public static void main(String[] args) {
         int a[] = {2, 5, 1, 5, 4, 5};
-        System.out.println(lenthOfLIS(a));
+        // 10,9,2,5,3,7,101,18
+        int a2[] = {10, 9, 2, 5, 3, 7, 101, 18};
+        System.out.println(lenthOfLIS(a2));
     }
 
     /**
      * 动态规划
+     *
      * @param nums
      * @return
      */
@@ -55,6 +58,7 @@ public class 最长公共子序列 {
 
     /**
      * 二分查找
+     *
      * @param nums
      * @return
      */

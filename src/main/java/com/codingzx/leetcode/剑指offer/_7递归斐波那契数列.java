@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 0 1 1 2 3 5 8
  * @Date 2020-07-07 19:35
  */
-public class _7斐波那契数列 {
+public class _7递归斐波那契数列 {
     public static int Fibonacci(int n) {
         if (n == 0) {
             return 0;

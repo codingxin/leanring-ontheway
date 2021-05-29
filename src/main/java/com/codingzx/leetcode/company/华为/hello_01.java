@@ -48,6 +48,7 @@ public class hello_01 {
             } else {
                 sb.append(prenumber.charAt(j - 1)).append(k);
                 map = new HashMap<>();
+                k = 1;
                 map.put(prenumber.charAt(j), k);
             }
         }

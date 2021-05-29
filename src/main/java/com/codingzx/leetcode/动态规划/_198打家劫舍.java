@@ -1,8 +1,11 @@
 package com.codingzx.leetcode.动态规划;
 
+import java.util.Arrays;
+
 /**
  * @author codingzx
- * @description 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+ * @description 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，
+ * 如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
  * <p>
  * 给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。
  * <p>
@@ -23,6 +26,8 @@ package com.codingzx.leetcode.动态规划;
  */
 public class _198打家劫舍 {
 
+    // dp 代表第k间房 能偷得最大金额  可能取k 可能取 k-1
+    // 状态转移方程 dp[k] = Math.max(dp[i],dp[i-2]+nums[i])
     /**
      * 一间房屋 直接偷
      * 两间房屋 取最大的偷
@@ -33,6 +38,26 @@ public class _198打家劫舍 {
      * @param nums
      * @return
      */
+
+    public static int rob3(int[] nums) {
+        if (nums == null) {
+            return 0;
+        } else if (nums.length == 1) {
+            return nums[0];
+        }
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        dp[1] = nums[1] > nums[0] ? nums[1] : nums[0];
+        for (int i = 2; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        Arrays.stream(dp).forEach(e->{
+            System.out.println(e);
+        });
+
+
+        return dp[nums.length - 1];
+    }
 
 
     public static int rob(int[] nums) {
@@ -64,7 +89,7 @@ public class _198打家劫舍 {
 
         int first = dp[0];
         int second = dp[1];   // 不断前移的指针
-       // first second  tmp
+        // first second  tmp
         //              second
         //      newvalue
         //second
@@ -79,7 +104,7 @@ public class _198打家劫舍 {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 9, 3, 1};
-        System.out.println(rob(nums));
+        System.out.println(rob3(nums));
 
     }
 

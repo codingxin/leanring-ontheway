@@ -1,5 +1,7 @@
 package com.codingzx.leetcode.动态规划;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,15 +43,29 @@ public class _740删除并获得点数 {
     // 传入当前下标，计算其他元素
 
     /**
-     * @param numCount 当前dp数组
-     * @param i        当前下标
-     * @param count    当前结果
      * @return
      */
-    public Integer findMax(Map<Integer, Integer> numCount, int i, int count) {
-
-
-        return count;
+    //         int[] nums = {1,1,1,2,2,3,3,3,4,5};
+    public static int deleteAndEarn2(int[] nums) {
+        if (nums == null) {
+            return 0;
+        } else if (nums.length == 1) {
+            return nums[0];
+        }
+        int[] result = new int[Arrays.stream(nums).max().getAsInt() + 1];
+        for (int i : nums) {
+            result[i] += i;
+        }
+        //  num{0,3,4,9,4,5}
+        // dp代表当前第i个元素能取到的最大值
+        int[] dp = new int[result.length];
+        dp[0] = result[0];
+        dp[1] = Math.max(result[0], result[1]);
+        for (int i = 2; i < dp.length; i++) {
+            // 0  0  2  3  4
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + result[i]);
+        }
+        return Arrays.stream(dp).max().getAsInt();
     }
 
 
@@ -76,20 +92,47 @@ public class _740删除并获得点数 {
 
     public static int rob(int[] nums) {
         int first = nums[0];
-        int second = Math.max(nums[0], nums[1]);
+        int result = Math.max(nums[0], nums[1]);
         for (int i = 2; i < nums.length; i++) {
-            int tmp = second;
-            second = Math.max(first + nums[i], second);
+            int tmp = result;
+            System.out.println("second原值为" + result + ",first为" + first + ",nums[i]为" + nums[i]);
+            result = Math.max(first + nums[i], result);
+            System.out.println("second新值为" + result + "tmp为" + tmp);
             first = tmp;
+            System.out.println("========================");
         }
-        return second;
+        return result;
     }
 
 
     public static void main(String[] args) {
-        int[] nums = {3,1};
-        System.out.println(deleteAndEarn(nums));
+        int[] nums = {1, 1, 1, 2, 2, 3, 3, 3, 4, 5};
+        int[] nums2 = {3, 4, 2};
+        //  num{0,3,4,9,4,5}
+        //
 
+//        System.out.println(deleteAndEarn2(nums2));
+        int[] arr = {2, 5, 1, 5, 4, 5};
+        System.out.println(getMaxSteps(arr, 6));
+    }
+
+    public static int getMaxSteps(int[] arr, int n) {
+        //  * 2 5 1 5 4 5
+        int[] dp = new int[arr.length];
+        Arrays.fill(dp, 1);
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (arr[i] > arr[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+        }
+        for (int i : dp) {
+            System.out.print(i + " ");
+        }
+
+        return Arrays.stream(dp).max().getAsInt();
+// 1 2 1 2 2 3 3
     }
 
 
