@@ -14,6 +14,7 @@ import java.util.Stack;
 public class 单向链表的逆序输出 {
     ArrayList<Integer> list = new ArrayList<>();
 
+    // 递归
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         // 递归
         if (listNode != null) {
