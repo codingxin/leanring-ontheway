@@ -38,7 +38,7 @@ class HelloThread extends Thread {
         int n = 0;
         while (!isInterrupted()) {
             n++;
-            System.out.println(n + " hello!");
+            System.out.println(n + " Start!");
             try {
                 Thread.sleep(100); // 等待0.1s
             } catch (InterruptedException e) {

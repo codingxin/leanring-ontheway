@@ -40,9 +40,9 @@ public class TestAnnotation {
     @MyMethodAnnotation(desc = "这是方法注解2 sayHello", uri = "com.sgl.annotation#sayHello")
     public void sayHello(String name) {
         if (name == null || name.equals("")) {
-            System.out.println("hello world!");
+            System.out.println("Start world!");
         } else {
-            System.out.println(name + "\t:say hello world");
+            System.out.println(name + "\t:say Start world");
         }
     }
 

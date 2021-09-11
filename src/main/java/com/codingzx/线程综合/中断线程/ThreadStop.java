@@ -55,7 +55,7 @@ class MyThread extends Thread {
         int n = 0;
         while (!isInterrupted()) {  // 当线程中断标志为true 不满足 退出循环，实现中短线程
             n++;
-            System.out.println(n + " hello!");
+            System.out.println(n + " Start!");
         }
     }
 }
@@ -71,7 +71,7 @@ class MyThread2 extends Thread {
         int n = 0;
         while (running) {
             n++;
-            System.out.println(n + " hello!");
+            System.out.println(n + " Start!");
         }
         System.out.println("end!");
 

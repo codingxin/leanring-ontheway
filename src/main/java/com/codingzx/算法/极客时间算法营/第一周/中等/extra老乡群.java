@@ -53,7 +53,7 @@ public class extra老乡群 {
         if (xset != yset) {
             parent[xset] = yset;
             System.out.println("x为" + x + ",y为" + y + ",xset=" + xset + "yset=" + yset
-                    + ",hello" + parent[xset]);
+                    + ",Start" + parent[xset]);
         }
     }
 

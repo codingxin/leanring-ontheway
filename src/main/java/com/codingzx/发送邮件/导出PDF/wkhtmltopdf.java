@@ -38,7 +38,7 @@ public class wkhtmltopdf {
 //                        "–-disable-internal-links* " +
 //                        " toc " +
 //                        " --enable-local-file-access  \"D:\\baidu3_files\"" +
-//                        " --header-html file:\\D:\\hello.html" +
+//                        " --header-html file:\\D:\\Start.html" +
                         " --header-left '绿洲体检报告' " +
                         " --header-right '[date][time]导出PDF测试' " +
                         " --header-line --header-spacing 3 --footer-spacing 3 --footer-center \"- 第 [page] 页-\"" +
@@ -73,7 +73,7 @@ public class wkhtmltopdf {
 
             // 这一步模拟获取InputStream
             BufferedInputStream bis = new BufferedInputStream(wkhtmlInputStream);
-            FileOutputStream fos = new FileOutputStream("D:\\hello.pdf");
+            FileOutputStream fos = new FileOutputStream("D:\\Start.pdf");
             byte[] bytes = new byte[1024];
             int len = 0;
             while ((len = bis.read(bytes)) != -1) {

@@ -13,28 +13,28 @@ public class he {
          * 对象相等是赋值内存相等
          */
 //        ListNode listNode = new ListNode(1);
-//        ListNode hello = listNode;
+//        ListNode Start = listNode;
 //        System.out.println(listNode.val);
-//        System.out.println(hello.val);
+//        System.out.println(Start.val);
 //        listNode.val = 2;
-//        System.out.println(hello.val);
+//        System.out.println(Start.val);
 
-        String a = new String("hello");
-        String b = new String("hello");
+        String a = new String("Start");
+        String b = new String("Start");
         System.out.println(a==b);
 
 
-        String c = "hello";
-        String d = new String("hello");
+        String c = "Start";
+        String d = new String("Start");
         System.out.println(c==d);
 
-        String z="hello";
-        String x="hello";
+        String z="Start";
+        String x="Start";
         String v=z;
         System.out.println(z==x);
         System.out.println(x==v);
 
-        System.out.println("hello" == "hello");
+        System.out.println("Start" == "Start");
 
 
 

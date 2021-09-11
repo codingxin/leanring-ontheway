@@ -25,7 +25,7 @@ public class ThreadStatus {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {
-            System.out.println("hello");
+            System.out.println("Start");
         });
         System.out.println("start");
         t.start();

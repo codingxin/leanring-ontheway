@@ -51,4 +51,17 @@ public class 兑换货币 {
         sc.close();
     }
 
+    public int change(int amount, int[] coins) {
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, 1);
+        dp[0] = 0;
+        for (int i = 1; i <= amount; i++) {
+            for (int money : coins) {
+                if (money < i) {
+                    dp[i] = Math.max(dp[i - money] + 1, dp[i]);
+                }
+            }
+        }
+        return dp[amount];
+    }
 }

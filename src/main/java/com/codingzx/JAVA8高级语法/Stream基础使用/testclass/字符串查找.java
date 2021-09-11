@@ -15,7 +15,7 @@ public class 字符串查找 {
 //        Scanner scanner = new Scanner(System.in);
 //        StringBuffer sb=new StringBuffer(scanner.nextLine());
 
-        String sb = "hello B dcasdwevvvdsdvsadqwdsa B dsbdsab B dsa B da B";
+        String sb = "Start B dcasdwevvvdsdvsadqwdsa B dsbdsab B dsa B da B";
         System.out.println(sb.split("b").length);
         Arrays.stream(sb.split("b")).forEach(e->{
             System.out.println("字串是"+e.toString()+"长度是"+e.length());

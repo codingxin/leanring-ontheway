@@ -28,7 +28,7 @@ public class _1两数之和 {
             map.put(nums[i], i);
         }
 //        for (Map.Entry e : map.entrySet()) {
-//            System.out.println(e.getKey() + "hello" + e.getValue());
+//            System.out.println(e.getKey() + "Start" + e.getValue());
 //        }
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];

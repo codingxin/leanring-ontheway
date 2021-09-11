@@ -47,10 +47,10 @@ public class main {
 //        }
 //        System.out.println(sb.toString());
 
-        Student student1 = new Student(10, "hello");
-        Student student2 = new Student(20, "hello");
-        Student student3 = new Student(30, "hello");
-        Student student4 = new Student(50, "hello");
+        Student student1 = new Student(10, "Start");
+        Student student2 = new Student(20, "Start");
+        Student student3 = new Student(30, "Start");
+        Student student4 = new Student(50, "Start");
         ArrayList<Student> listStudent = new ArrayList<>();
         listStudent.add(student1);
         listStudent.add(student2);

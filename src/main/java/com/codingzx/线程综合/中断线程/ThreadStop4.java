@@ -17,7 +17,7 @@ class HelloThread1 extends Thread {
         int n = 0;
         while (running) {
             n++;
-            System.out.println(n + " hello!");
+            System.out.println(n + " Start!");
         }
         System.out.println("end!");
     }
