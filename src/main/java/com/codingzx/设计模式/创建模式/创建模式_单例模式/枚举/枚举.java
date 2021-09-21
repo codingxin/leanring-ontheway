@@ -1,4 +1,4 @@
-package com.codingzx.设计模式.创建模式.创建模式_单例模式;
+package com.codingzx.设计模式.创建模式.创建模式_单例模式.枚举;
 
 /**
  * @author codingzx
