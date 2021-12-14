@@ -1,5 +1,4 @@
-package com.codingzx.设计模式.行为模式.行为模式_策略模式;
-
+package com.codingzx.设计模式.行为模式.行为模式_策略模式.basic;
 
 
 /**

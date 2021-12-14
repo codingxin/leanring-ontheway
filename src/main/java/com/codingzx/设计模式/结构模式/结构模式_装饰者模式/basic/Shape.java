@@ -1,4 +1,4 @@
-package com.codingzx.设计模式.结构模式.结构模式_装饰者模式;
+package com.codingzx.设计模式.结构模式.结构模式_装饰者模式.basic;
 
 /**
  * @author codingzx

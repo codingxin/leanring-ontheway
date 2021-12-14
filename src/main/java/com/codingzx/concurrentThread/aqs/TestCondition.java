@@ -22,7 +22,7 @@ public class TestCondition {
                     condition2.signal();
                     condition1.await();
                 }
-                condition2.signal();
+//                condition2.signal();
             } catch (Exception e) {
             } finally {
                 lock.unlock();
@@ -36,7 +36,7 @@ public class TestCondition {
                     condition1.signal();
                     condition2.await();
                 }
-                condition1.signal();
+//                condition1.signal();
             } catch (Exception e) {
             } finally {
                 lock.unlock();

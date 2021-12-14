@@ -1,4 +1,4 @@
-package com.codingzx.发送邮件;
+package com.codingzx.功能模块代码.发送邮件;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,13 @@ import org.springframework.mail.javamail.JavaMailSender;
 import javax.mail.MessagingException;
 import java.util.Date;
 
-public class hello {
+/**
+ * @author codingzx
+ * @description
+ * @date 2021/11/27 16:04
+ */
+public class SendEmailDemo {
+
     @Autowired
     JavaMailSender javaMailSender;
 
@@ -24,4 +30,5 @@ public class hello {
         message.setText("测试简单发送邮件");
         javaMailSender.send(message);
     }
+
 }

@@ -7,6 +7,9 @@ package com.codingzx.设计模式.行为模式.行为模式_责任链模式.案�
  */
 public class ChainPatternDemo {
 
+
+
+    // 手动设置责任链
     private static AbstractLogger getChainOfLoggers(){
 
         AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);   // 3
@@ -22,10 +25,10 @@ public class ChainPatternDemo {
     public static void main(String[] args) {
         AbstractLogger loggerChain = getChainOfLoggers();
 
-        loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
-
-        loggerChain.logMessage(AbstractLogger.DEBUG,
-                "This is a debug level information.");
+//        loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
+//
+//        loggerChain.logMessage(AbstractLogger.DEBUG,
+//                "This is a debug level information.");
 
         loggerChain.logMessage(4,
                 "This is an error information.");
