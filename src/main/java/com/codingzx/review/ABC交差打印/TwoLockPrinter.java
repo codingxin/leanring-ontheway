@@ -45,9 +45,9 @@ public class TwoLockPrinter implements Runnable {
         // 连续打印PRINT_COUNT次
 //        for (int i = 0; i < PRINT_COUNT; i++) {
 //            // 获取前一个线程的打印锁
-//            synchronized (fontLock) {
+//            synchronize (fontLock) {
 //                // 获取本线程的打印锁
-//                synchronized (thisLock) {
+//                synchronize (thisLock) {
 //                    //打印字符
 //                    System.out.print(printChar);
 //                    // 通过本线程的打印锁唤醒后面的线程

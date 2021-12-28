@@ -37,7 +37,7 @@ import com.codingzx.设计模式.创建模式.创建模式_单例模式.枚举.�
  * 1、要求生产唯一序列号。
  * 2、WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。
  * 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。
- * 注意事项：getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。
+ * 注意事项：getInstance() 方法中需要使用同步锁 synchronize (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。
  */
 public class hello {
 
