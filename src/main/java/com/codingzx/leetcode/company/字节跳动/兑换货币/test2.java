@@ -32,7 +32,9 @@ public class test2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
+            // 需要凑齐多少钱
             int num = 1024 - sc.nextInt();
+            // 凑齐第 块钱
             int[] dp = new int[num + 1];
             int[] money = {1, 4, 16, 64};
             Arrays.fill(dp, num + 1);

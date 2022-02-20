@@ -1,6 +1,8 @@
 package com.codingzx.concurrentThread.TestThread;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author codingzx
@@ -12,6 +14,8 @@ public class Hello {
     public volatile static int sum = 0;
 
     public static CountDownLatch countDownLatch = new CountDownLatch(10);
+
+    ExecutorService executors = Executors.newCachedThreadPool();
 
 
     public static class TestThread implements Runnable {

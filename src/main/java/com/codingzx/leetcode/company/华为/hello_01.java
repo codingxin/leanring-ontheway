@@ -3,6 +3,7 @@ package com.codingzx.leetcode.company.华为;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * @author codingzx
@@ -25,6 +26,7 @@ public class hello_01 {
             a[0] = 1;
             for (int i = 1; i <= n; i++) {
                 String prenumber = String.valueOf(a[i - 1]);
+                System.out.println("当前处理字符串" + prenumber);
                 a[i] = Integer.valueOf(chulicurnumber(prenumber));
             }
             System.out.println(a[n]);
@@ -39,19 +41,29 @@ public class hello_01 {
      */
     public static String chulicurnumber(String prenumber) { // 2  1   ->> 1 2 1 1 ->>  1 1  1 2 2 1
         StringBuilder sb = new StringBuilder();
-        Map<Character, Integer> map = new HashMap<>();
-        map.put(prenumber.charAt(0), 1);
-        int k = 1; // 記錄每個數字次數
-        for (int j = 1; j < prenumber.length(); ) {
-            if (map.containsKey(prenumber.charAt(j))) {
-                k++;
+        Stack<Character> stack = new Stack<>();
+        stack.add(prenumber.charAt(0));
+        if (prenumber.length() == 1) {
+            sb.append(prenumber.charAt(0) + "" + 1);
+            return sb.toString();
+        }
+        for (int i = 1; i < prenumber.length(); i++) {
+            //  1  2   1   1
+            char c = prenumber.charAt(i);
+            if (stack.contains(c)) {
+                stack.add(c);
             } else {
-                sb.append(prenumber.charAt(j - 1)).append(k);
-                map = new HashMap<>();
-                k = 1;
-                map.put(prenumber.charAt(j), k);
+                sb.append(stack.size() + "" + (stack.get(0)));
+                stack = new Stack<>();
+                // 最关键 加入下一次的起始字母
+                stack.add(prenumber.charAt(i));
             }
         }
+        // 防止 最后退出的 堆栈 还有数据
+        if (!stack.isEmpty()) {
+            sb.append(stack.size() + "" + (stack.get(0)));
+        }
+
         return sb.toString();
     }
 

@@ -6,6 +6,9 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author codingzx
  * @description
+ *
+ * 线程交错打印
+ *
  * @date 2021/5/5 14:09
  */
 public class TestCondition {

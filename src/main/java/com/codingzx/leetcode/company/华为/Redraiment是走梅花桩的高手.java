@@ -62,6 +62,7 @@ public class Redraiment是走梅花桩的高手 {
             dp[i] = 1;        // 状态方程 dp数组每个初始为1  存储的步数
             for (int j = 0; j < i; j++) {  // 判断
                 if (arr[j] < arr[i]) {
+                    System.out.println("满足的 i 为 " + i+"   ,   满足的 j 为"+ j);
                     dp[i] = Math.max(dp[i], dp[j] + 1); //状态转移方程
                 }
             }
