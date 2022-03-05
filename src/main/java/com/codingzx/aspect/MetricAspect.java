@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MetricAspect {
+
     @Around("@annotation(metricTime)")
     public Object metric(ProceedingJoinPoint joinPoint, MetricTime metricTime) throws Throwable {
         String name = metricTime.value();

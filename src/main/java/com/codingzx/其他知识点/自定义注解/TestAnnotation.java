@@ -66,6 +66,8 @@ public class TestAnnotation {
         // 获得字段注解
         Field field = clazz.getDeclaredField("id");// 暴力获取private修饰的成员变量
         MyFieldAnnotation myFieldAnnotation = field.getAnnotation(MyFieldAnnotation.class);
+        field.setAccessible(true);
         System.out.println(myFieldAnnotation.desc() + "+" + myFieldAnnotation.uri());
+
     }
 }

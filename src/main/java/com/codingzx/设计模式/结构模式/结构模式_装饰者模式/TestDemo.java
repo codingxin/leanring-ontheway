@@ -24,12 +24,13 @@ public class TestDemo {
     public static void main(String[] args) {
 
         Shape circle = new CircleShape();
+        System.out.println("Circle with normal border");
+        circle.draw();
+
         AbstractShape redCircle = new Decorator(new CircleShape());
         AbstractShape redRectangle = new Decorator(new RectangleShape());
         //AbstraShape redCircle = new RedShapeDecorator(new Circle());
         //AbstraShape redRectangle = new RedShapeDecorator(new Rectangle());
-        System.out.println("Circle with normal border");
-        circle.draw();
 
         System.out.println("\nCircle of red border");
         redCircle.draw();

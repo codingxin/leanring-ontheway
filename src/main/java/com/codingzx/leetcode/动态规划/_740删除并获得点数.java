@@ -78,15 +78,10 @@ public class _740删除并获得点数 {
             maxVal = Math.max(tmp, maxVal);
         }
         int[] dp = new int[maxVal + 1];
-        // 2 2 3 3 3 4
-        // 0 0 4 9 4
-//        for (int i = 0; i < nums.length; i++) {
-//            dp[nums[i]] += nums[i];
-//        }
         for (int val : nums) {
             dp[val] += val;
         }
-
+        // 0 3 4 9 4 5
         return rob(dp);
     }
 
@@ -94,11 +89,14 @@ public class _740删除并获得点数 {
         int first = nums[0];
         int result = Math.max(nums[0], nums[1]);
         for (int i = 2; i < nums.length; i++) {
+            // 两个元素中 较大的
             int tmp = result;
-            System.out.println("second原值为" + result + ",first为" + first + ",nums[i]为" + nums[i]);
+            // 1 3 两个元素之和  和 中间元素
             result = Math.max(first + nums[i], result);
-            System.out.println("second新值为" + result + "tmp为" + tmp);
+            // 第一个元素 取结果
             first = tmp;
+            System.out.println("tmp:       "+first + "   num[i]：" + nums[i]);
+            System.out.println("  result： " + result );
             System.out.println("========================");
         }
         return result;
@@ -111,29 +109,8 @@ public class _740删除并获得点数 {
         //  num{0,3,4,9,4,5}
         //
 
-//        System.out.println(deleteAndEarn2(nums2));
-        int[] arr = {2, 5, 1, 5, 4, 5};
-        System.out.println(getMaxSteps(arr, 6));
+        System.out.println(deleteAndEarn(nums));
+
     }
-
-    public static int getMaxSteps(int[] arr, int n) {
-        //  * 2 5 1 5 4 5
-        int[] dp = new int[arr.length];
-        Arrays.fill(dp, 1);
-        for (int i = 0; i < dp.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (arr[i] > arr[j]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-                }
-            }
-        }
-        for (int i : dp) {
-            System.out.print(i + " ");
-        }
-
-        return Arrays.stream(dp).max().getAsInt();
-// 1 2 1 2 2 3 3
-    }
-
 
 }

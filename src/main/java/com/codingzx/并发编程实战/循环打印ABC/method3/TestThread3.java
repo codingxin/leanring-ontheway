@@ -12,14 +12,15 @@ import java.util.concurrent.CountDownLatch;
 public class TestThread3 {
 
     public static void main(String[] args) throws InterruptedException {
+
+
         CountDownLatch countDownLatch = new CountDownLatch(2);
-
-
         while (true) {
             Thread athread = new Thread(new ThreadDemo("A"));
             athread.start();
             Thread.sleep(100);
             countDownLatch.countDown();
+
 
             Thread bthread = new Thread(new ThreadDemo("B"));
             bthread.start();

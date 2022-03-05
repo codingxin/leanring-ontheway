@@ -30,6 +30,7 @@ public class CountDountLatchExample {
             });
         }
         countDownLatch.await();
+        executorService.shutdown();
         log.info("count1");
     }
 

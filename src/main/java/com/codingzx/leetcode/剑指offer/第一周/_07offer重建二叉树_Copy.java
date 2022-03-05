@@ -2,6 +2,7 @@ package com.codingzx.leetcode.剑指offer.第一周;
 
 
 import com.codingzx.leetcode.leetcode.entity.TreeNode;
+import sun.reflect.generics.tree.Tree;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,23 +12,21 @@ import java.util.Map;
  * @description
  * @date 2021/5/29 9:44
  */
-public class _07offer重建二叉树 {
-    Map<Integer, Integer> treeIndexMap;
+public class _07offer重建二叉树_Copy {
+
+    public Map<Integer, Integer> map;
 
     /**
-     *
-     * @param preorder   前序遍历
-     * @param inorder    中序遍历
+     * @param preorder 前序遍历
+     * @param inorder  中序遍历
      * @return
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         int n = preorder.length;
-        treeIndexMap = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            treeIndexMap.put(preorder[i], i);
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
         }
         return buildSonTree(preorder, inorder, 0, n - 1, 0, n - 1);
-
     }
 
     /**
@@ -41,23 +40,14 @@ public class _07offer重建二叉树 {
      */
     public TreeNode buildSonTree(int[] preorder, int[] inorder, int preleft, int preright, int orderleft, int orderright) {
         if (preleft > preright) return null;
-        // 根节点 val
+        // 先序遍历中 根节点
         int root_value = preorder[preleft];
-        // 根节点在先序数组中索引
-        int order_root = treeIndexMap.get(root_value);
-        // 中序遍历中求出左子树长度
-        int order_left_length = order_root - orderleft;
-        // 构造根节点
+        int order_root_index = map.get(root_value);
+        int left_length = order_root_index - orderleft;
         TreeNode treeNode = new TreeNode(root_value);
-
-
-        // 递归构造左子树
-        treeNode.left = buildSonTree(preorder, inorder, preleft + 1, preleft + order_left_length, orderleft, order_root - 1);
-        // 递归构造右子树
-        treeNode.right = buildSonTree(preorder, inorder, preleft + order_left_length + 1, preright, order_root + 1, orderright);
-
+        treeNode.left = buildSonTree(preorder, inorder, preleft + 1, preright + left_length, orderleft, order_root_index - 1);
+        treeNode.right = buildSonTree(preorder, inorder, preleft + 1 + left_length, preright, order_root_index+1, orderright);
         return treeNode;
-
     }
 
 

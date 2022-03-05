@@ -17,7 +17,7 @@ public class wkhtmltopdf {
     public static void main(String[] args) {
         String upload = null;
         try {
-            URL url = new URL("https://coolshell.cn/");
+            URL url = new URL("http://www.baidu.com");
 
 
             InputStream inStream = url.openConnection().getInputStream();

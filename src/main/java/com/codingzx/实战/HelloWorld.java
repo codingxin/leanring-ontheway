@@ -1,9 +1,14 @@
-package com.codingzx;
+package com.codingzx.实战;
 
-import com.codingzx.JAVA8高级语法.Stream基础使用.HashMap排序题.User;
+/**
+ * @author codingzx
+ * @description
+ * @date 2022/2/20 16:55
+ */
 
-import java.util.*;
-import java.util.stream.Collectors;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import java.sql.SQLOutput;
 
 /**
  * @author codingzx
@@ -13,7 +18,7 @@ import java.util.stream.Collectors;
  * 文件格式为：商品名（字符串）\t价格（两位小数的正数），如：
  * 西湖龙井500g	700.00
  * 长城干红750ml	75.00
- *
+ * <p>
  * 考点： 文件读取  文件分类  排序
  *
  * <p>
@@ -21,7 +26,7 @@ import java.util.stream.Collectors;
  * 容器的容量限制为固定大小，要求任何时候这个容器都是有序的。
  * 比如一次插入 [5, 3, 3, 1]，希望顺序是 [1, 3, 3, 5],
  * 要求: 不借助任何其他有能排序特性的第三方容器
- *
+ * <p>
  * 考点： 读写锁  COW  自定义排序算法插入容器
  *
  *
@@ -35,32 +40,43 @@ import java.util.stream.Collectors;
  * b. 功能完备，逻辑正确
  * @date 2020/8/21 20:37
  * 100 0000 0000
+ * <p>
+ * <p>
+ * 4. 实现手写的 LRU 算法
+ * <p>
+ * 5.  布隆过滤器
+ * <p>
+ * 6.  多级Redis缓存算法
+ * <p>
+ * 7.  生产者消费者模型
+ * <p>
+ * 8.
  */
-public class sortLoginInfo {
 
+public class HelloWorld {
 
     public static void main(String[] args) {
-        List<User> list = new ArrayList<>(); // 获取所有list
-        List<Integer> userIdlist = list.stream().map(User::getUserId).collect(Collectors.toList());
-        Hashtable<Integer, Integer> result = new Hashtable<>(); //userId,出现次数
-        for (Integer id : userIdlist) {
-            if (result.containsKey(id)) {
-                result.put(id, result.get(id) + 1);
-            }
-            else result.put(id, 1);
-        }
-        List<Map.Entry<Integer, Integer>> list1 = new ArrayList<Map.Entry<Integer, Integer>>(result.entrySet()); //转换为list
-        list1.sort(new Comparator<Map.Entry<Integer, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                return o2.getValue().compareTo(o1.getValue());
-            }
-        });
-       for(int i=0;i<10;i++){
-           System.out.println("用户id"+list1.get(i).getKey()+"出现了"+list1.get(i).getValue()+"次");
-       }
 
+        MyList myList = new MyList();
+        myList.put(1);
+        myList.put(3000);
+        myList.put(2000);
+
+        System.out.println(myList);
+        System.out.println(myList.get(2));
+
+        // 随机生成  100 0000 个数字    放进自定义容器     取 100000  100001 100002 判断是否有序
+        long curtime = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            myList.put((int) (Math.random() * 10000));
+        }
+        long endtime = System.currentTimeMillis();
+        System.out.println("花费 " + (endtime - curtime) + "ms");
+        System.out.println(myList.get(3000));
+        System.out.println(myList.get(3001));
+        System.out.println(myList.get(3002));
 
     }
+
 
 }

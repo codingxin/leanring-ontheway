@@ -27,11 +27,34 @@ public class hello_01 {
             for (int i = 1; i <= n; i++) {
                 String prenumber = String.valueOf(a[i - 1]);
                 System.out.println("当前处理字符串" + prenumber);
-                a[i] = Integer.valueOf(chulicurnumber(prenumber));
+                a[i] = Integer.valueOf(chulicurnumber2(prenumber));
             }
             System.out.println(a[n]);
         }
     }
+
+    //  1  2  1  1
+    public static String chulicurnumber2(String prenumber) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
+        stack.add(prenumber.charAt(0));
+        for (int i = 1, length = prenumber.length(); i < length; i++) {
+            char curchar = prenumber.charAt(i);
+            if (stack.contains(curchar)) {
+                stack.add(curchar);
+            } else {
+                // 清除栈中数据
+                sb.append(stack.size() + "" + stack.pop());
+                stack = new Stack<>();
+                stack.add(curchar);
+            }
+        }
+        if (!stack.isEmpty()) {
+            sb.append(stack.size() + "" + stack.pop());
+        }
+        return sb.toString();
+    }
+
 
     /**
      * 根据前一个数字构建

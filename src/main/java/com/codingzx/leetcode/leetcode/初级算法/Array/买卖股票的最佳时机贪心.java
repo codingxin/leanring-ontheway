@@ -26,7 +26,7 @@ public class 买卖股票的最佳时机贪心 {
         int max = 0;
         for (int i = 0; i < prices.length - 1; i++) {
             if (prices[i] < prices[i + 1]) {
-                System.out.println("第[" + i + "]" + prices[i] + ",第[" + i + 1 + "]" + prices[i + 1]);
+                System.out.println("第[" + i + "]" + prices[i] + ",第[" + (i + 1) + "]" + prices[i + 1]);
                 max += prices[i + 1] - prices[i];
             }
         }

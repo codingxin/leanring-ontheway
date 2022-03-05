@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Slf4j
 @ThreadSafe
-public class AtomicTestDemo {
+public class _AtomicTestDemo {
 
     public static int clientTotal = 5000;
 

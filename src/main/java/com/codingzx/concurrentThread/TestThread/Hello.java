@@ -23,8 +23,9 @@ public class Hello {
         public void run() {
             for (int i = 0; i < 1000; i++) {
                 sum += i;
-                if (i == 999) countDownLatch.countDown();
+//                if (i == 999) countDownLatch.countDown();
             }
+            countDownLatch.countDown();
         }
     }
 

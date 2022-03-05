@@ -33,7 +33,6 @@ public class TestSemaphore {
                 }
 
             }).start();
-//            System.out.println("第" + i + "次：" + Thread.activeCount());
         }
 
 

@@ -1,5 +1,6 @@
 package com.codingzx.leetcode.company.华为;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ import java.util.Scanner;
  * 2 5 1 5 4 5
  * 样例输出
  * 3
-
+ * <p>
  * 提示
  * <p>
  * Example:        1 2 3 4 5 6
@@ -58,11 +59,12 @@ public class Redraiment是走梅花桩的高手 {
     // dp[1 1 1 1 1]
     public static int getMaxSteps(int[] arr, int n) {
         int[] dp = new int[n];
+        Arrays.fill(dp, 1);
         for (int i = 0; i < n; i++) {
-            dp[i] = 1;        // 状态方程 dp数组每个初始为1  存储的步数
+            // 状态方程 dp数组每个初始为1  存储的步数
             for (int j = 0; j < i; j++) {  // 判断
                 if (arr[j] < arr[i]) {
-                    System.out.println("满足的 i 为 " + i+"   ,   满足的 j 为"+ j);
+                    System.out.println("满足的 i 为 " + i + "   ,   满足的 j 为" + j);
                     dp[i] = Math.max(dp[i], dp[j] + 1); //状态转移方程
                 }
             }
@@ -83,5 +85,31 @@ public class Redraiment是走梅花桩的高手 {
 //        });
         return max;
     }
+
+//    public static int getMaxSteps2(int[] arr, int n) {
+//        int[] dp = new int[n];
+//        Arrays.fill(dp, 1);
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < i; j++) {
+//                if (arr[i] > arr[j]) {
+//                    dp[i] = Math.max(dp[i], dp[j] + 1);
+//                }
+//            }
+//
+//        }
+//
+//        for (int i : dp) {
+//            System.out.print(i + " ");
+//        }
+//        // 找到dp数组中的最大值即可
+//        int max = 0;
+//        for (int i = 0; i < dp.length; i++)
+//            if (dp[i] > max) {
+//                max = dp[i];
+//            }
+//
+//
+//    }
+
 
 }

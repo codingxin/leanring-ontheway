@@ -34,11 +34,12 @@ public class SemaphoreExample {
                 }
             });
         }
+        executorService.shutdown();
     }
 
 
     public static void test(int count) throws InterruptedException {
         log.info("第{}个", count);
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
 }
